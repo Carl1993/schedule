@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Schedule</title>
+	<style type="text/css">
+		a{TEXT-DECORATION:none; font-family:Microsoft YaHei;}
+		
+		div {
+			position: absolute;
+			height: 500px;
+			width: 500px;
+			top: 50%;
+			left: 50%;
+			margin-left: -250px;
+			margin-top: -250px;
+			border: 0px solid #555;
+		}
+
+		@-webkit-keyframes greenPulse {
+			from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+			50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+			to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+		}
+		
+		@-webkit-keyframes bluePulse {
+			from { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+			50% { background-color: #2daebf; -webkit-box-shadow: 0 0 18px #2daebf; }
+			to { background-color: #007d9a; -webkit-box-shadow: 0 0 9px #333; }
+		}
+		a.button {
+			-webkit-animation-duration: 2s;
+			-webkit-animation-iteration-count: infinite;
+			display: inline-block;
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+			-webkit-border-radius:6px;
+			-moz-border-radius:6px;
+			color: #FFFFFF;
+			padding-top: 5px;
+			padding-right: 10px;
+			padding-bottom: 5px;
+			padding-left: 10px;
+		}
+		.green.button { -webkit-animation-name: greenPulse; -webkit-animation-duration: 3s; }
+		.blue.button { -webkit-animation-name: bluePulse; -webkit-animation-duration: 4s; }
+
+		.Input{border:1 solid black;border-radius:5;font-family:'Microsoft YaHei','SimHei';font-size:15;height:35;}
+	</style>
+</head>
+<body bgcolor='#333'>
+	<p style="color:white;font-family:'Microsoft YaHei','SimHei'" align="right">
+		<span>{% if usertype == 1 %}Dcotor{% elif usertype == 2 %}Nurse{% else %}Patient/VisitorP{% endif %}</span>
+		<span>{{username}}, welcome</span>
+		<span><a href="/logout/" class="green button">exit</a></span>
+	</p>
+<div>
+	<div align='center'>
+	<h2><p style='color:white' align='left'>Nearing schedules(at most 10)</p></h1>
+	<ul align='left'>
+	{% for item in on_duty %}
+	<li style="color:white;font-family:'Microsoft YaHei', 'SimHei'">{% for i in item %}
+	-{{ i }}-
+	{% endfor %}</li>
+	{% endfor %}
+	</ul>
+	<a href='../' class='blue button'>back</a>
+	</div>
+</body>
+</div>
+</html>

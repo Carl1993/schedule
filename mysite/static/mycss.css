@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+background:url(/pic/background.jpg) no-repeat center 0
+}
+table#dd {
+background-color: #6CADD9;
+}
+table#dd thead th {
+background-color: #228ED7;
+color: #FFFFFF;
+}
+#dd td {
+padding: 6px;
+width: 50px;
+}
+table#dd tbody.tb1 td {
+background-color: #FFFFFF;
+}
+table#dd tbody.tb2 td {
+background-color: #efefef;
+}
+table#dd tbody td:hover {
+background-color: #BFEDF9;
+}
+table#dd colgroup col.name {
+background-color: #d0d0d0;
+width: 100px;
+font-weight: normal;
+}
